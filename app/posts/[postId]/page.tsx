@@ -31,12 +31,12 @@ export const generateMetadata = ({ params: { postId } }: Props) => {
 const PostPage = async ({ params: { postId } }: Props) => {
   const posts = getSortedPostsData();
 
-  if (!posts.find((post) => post.id === postId)) {
-    return notFound();
-  }
+  // if (!posts.find((post) => post.id === postId)) {
+  //   return notFound();
+  // }
 
-  const post = await getPostData(postId);
-  const displayDate = getFormattedDate(post.date);
+  // const post = await getPostData(postId);
+  // const displayDate = getFormattedDate(post.date);
 
   return (
     <div className="prose prose-invert mx-auto">
@@ -56,7 +56,7 @@ const PostPage = async ({ params: { postId } }: Props) => {
           Back to Home
         </Link>
       </article> */}
-      <h1>{post.title}</h1>
+      <h1>{postId}</h1>
     </div>
   );
 };
