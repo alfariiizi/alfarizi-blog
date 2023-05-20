@@ -36,11 +36,11 @@ const PostPage = async ({ params: { postId } }: Props) => {
   }
 
   const post = await getPostData(postId);
-  // const displayDate = getFormattedDate(post.date);
+  const displayDate = getFormattedDate(post.date);
 
   return (
     <div className="prose prose-invert mx-auto">
-      {/* <h1 className="mb-0 w-fit bg-gradient-to-r from-green-300 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+      <h1 className="mb-0 w-fit bg-gradient-to-r from-green-300 via-blue-500 to-purple-500 bg-clip-text text-transparent">
         {post.title}
       </h1>
       <p className="mt-0 w-fit italic text-slate-500">{displayDate}</p>
@@ -55,8 +55,7 @@ const PostPage = async ({ params: { postId } }: Props) => {
           <IoMdReturnLeft className="relative left-0 text-text-white-color duration-300 group-hover:-left-2 group-hover:text-blue-500" />{" "}
           Back to Home
         </Link>
-      </article> */}
-      <h1>{postId}</h1>
+      </article>
     </div>
   );
 };

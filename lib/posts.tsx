@@ -60,18 +60,18 @@ export async function getPostData(postId: string) {
     .process(matterResult.content);
 
   // Convert from VFile (data type from remark) to string
-  // const contentHtml = processContent.toString();
-  const contentHtml = await rehype()
-    .use(rehypePrettyCode)
-    .use(rehypeStringify)
-    .process(processContent.toString());
+  const contentHtml = processContent.toString();
+  // const contentHtml = await rehype()
+  //   .use(rehypePrettyCode)
+  //   .use(rehypeStringify)
+  //   .process(processContent.toString());
 
   // "BlogPost & {contentHtml: string}" means that we insert contentHtml to BlogPost type
   const blogPostWithHtml: BlogPost & { contentHtml: string } = {
     id: postId,
     title: matterResult.data.title,
     date: matterResult.data.date,
-    contentHtml: contentHtml.toString(),
+    contentHtml: contentHtml,
   };
 
   return blogPostWithHtml;
