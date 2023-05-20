@@ -64,7 +64,7 @@ export async function getPostData(postId: string) {
   const contentHtml = await rehype()
     .use(rehypePrettyCode)
     .use(rehypeStringify)
-    .process(processContent);
+    .process(processContent.toString());
 
   // "BlogPost & {contentHtml: string}" means that we insert contentHtml to BlogPost type
   const blogPostWithHtml: BlogPost & { contentHtml: string } = {
