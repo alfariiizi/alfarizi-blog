@@ -31,11 +31,11 @@ export const generateMetadata = ({ params: { postId } }: Props) => {
 const PostPage = async ({ params: { postId } }: Props) => {
   const posts = getSortedPostsData();
 
-  // if (!posts.find((post) => post.id === postId)) {
-  //   return notFound();
-  // }
+  if (!posts.find((post) => post.id === postId)) {
+    return notFound();
+  }
 
-  // const post = await getPostData(postId);
+  const post = await getPostData(postId);
   // const displayDate = getFormattedDate(post.date);
 
   return (
