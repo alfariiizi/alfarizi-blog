@@ -8,8 +8,6 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import remarkRehype from "remark-rehype/lib";
 
-import { rehype } from "rehype";
-import rehypePrettyCode from "rehype-pretty-code";
 import rehypeKatex from "rehype-katex";
 import rehypeStringify from "rehype-stringify";
 
@@ -55,8 +53,6 @@ export async function getPostData(postId: string) {
     .use(remarkGfm)
     .use(remarkRehype)
     .use(remarkMath)
-    .use(rehypeStringify)
-    .use(rehypePrettyCode)
     .use(rehypeKatex)
     .use(rehypeStringify)
     .process(matterResult.content);
