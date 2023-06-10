@@ -1,10 +1,15 @@
-import { getSortedPostsData } from "@/lib/posts";
+import { getPostsMeta } from "@/lib/posts";
 import Item from "./Item";
 
 type Props = {};
 
-const Posts = (props: Props) => {
-  const posts = getSortedPostsData();
+const Posts = async (props: Props) => {
+  const posts = await getPostsMeta();
+
+  if (!posts) {
+    return <p>Sorry, no posts are available</p>;
+  }
+
   return (
     <section>
       <h2>Blog</h2>
