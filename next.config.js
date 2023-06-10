@@ -2,7 +2,7 @@
 const nextConfig = {
   swcMinify: false,
   experimental: {
-    serverComponentsExternalPackages: ["vscode-oniguruma", "shiki"],
+    // serverComponentsExternalPackages: ["vscode-oniguruma", "shiki"],
     mdxRs: false,
   },
 };
