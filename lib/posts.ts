@@ -1,4 +1,8 @@
 import { compileMDX } from "next-mdx-remote/rsc";
+import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
+import rehypeKatex from "rehype-katex";
+import rehypeHighlight from "rehype-highlight/lib";
 
 // it used for filetree inside of getPostsMeta() function
 type Filetree = {
@@ -52,6 +56,10 @@ export async function getPostByName(
     // all options (like plugin) will parse in here
     options: {
       parseFrontmatter: true,
+      mdxOptions: {
+        rehypePlugins: [rehypeKatex, rehypeHighlight],
+        remarkPlugins: [remarkMath, remarkGfm],
+      },
     },
   });
 
