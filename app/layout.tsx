@@ -27,9 +27,14 @@ export default function RootLayout({
         />
 
         {/* For syntax highlighting (rehype-highlight) */}
+        {/* Stackoverflow theme */}
         <link
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css"></link>
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/stackoverflow-dark.min.css"
+          integrity="sha512-Xn1b0y/BrCD7usnEh6r9CcKxHXFVleVUjGDnfc95zDDwFUwtOz3lJC/XtJcuLRNyrMQJEEToFfwjC9Ue/aWY/g=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
       </head>
       <body
         className={`${inter.className} flex min-h-screen flex-col bg-background-color text-text-white-color`}>
