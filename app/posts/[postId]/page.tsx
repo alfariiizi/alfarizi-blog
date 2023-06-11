@@ -7,10 +7,6 @@ import { Noto_Serif } from "next/font/google";
 
 const notoSerif = Noto_Serif({ weight: ["400"], subsets: ["latin"] });
 
-// revalidate = 0 means we use doesn't use cache
-// revalidate = 10 means revalidate every 10 seconds
-export const revalidate = 10;
-
 type Props = {
   params: {
     postId: string;
