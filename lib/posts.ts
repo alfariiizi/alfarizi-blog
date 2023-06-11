@@ -4,6 +4,8 @@ import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import rehypeHighlight from "rehype-highlight/lib";
 import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings/lib";
+import { h } from "hastscript";
 
 import CustomImage from "@/app/components/mdx-components/CustomImage";
 
@@ -65,7 +67,20 @@ export async function getPostByName(
     options: {
       parseFrontmatter: true,
       mdxOptions: {
-        rehypePlugins: [rehypeKatex, rehypeHighlight, rehypeSlug],
+        rehypePlugins: [
+          rehypeKatex,
+          rehypeHighlight,
+          rehypeSlug,
+          [
+            rehypeAutolinkHeadings,
+            {
+              // in order to make the link is marked by '#' before the header
+              content() {
+                return [h("span.icon.icon-link", "#")];
+              },
+            },
+          ],
+        ],
         remarkPlugins: [remarkMath, remarkGfm],
       },
     },

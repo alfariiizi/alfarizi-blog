@@ -2,8 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* For making all code blocks have no padding */
 .prose :where(pre):not(:where([class~="not-prose"] *)) {
   padding: 0;
+}
+
+/* Styling the '#' at header mdx content */
+.prose h2 > a {
+  @apply mr-3 text-background-color-spectrum-300 no-underline duration-200 hover:text-background-color-spectrum-200;
+}
+.prose h3 > a {
+  @apply mr-3 text-background-color-spectrum-300 no-underline duration-200 hover:text-background-color-spectrum-200;
+}
+.prose h4 > a {
+  @apply mr-3 text-background-color-spectrum-300 no-underline duration-200 hover:text-background-color-spectrum-200;
+}
+.prose h5 > a {
+  @apply mr-3 text-background-color-spectrum-300 no-underline duration-200 hover:text-background-color-spectrum-200;
+}
+.prose h6 > a {
+  @apply mr-3 text-background-color-spectrum-300 no-underline duration-200 hover:text-background-color-spectrum-200;
 }
 
 /* Default CSS from Nextjs */
