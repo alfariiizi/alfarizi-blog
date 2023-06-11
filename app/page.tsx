@@ -2,7 +2,7 @@ import Posts from "./components/Posts";
 
 // revalidate = 0 means we use doesn't use cache
 // revalidate = 10 means revalidate every 10 seconds
-export const revalidate = 10;
+export const revalidate = 0;
 
 export default function Home() {
   return (
