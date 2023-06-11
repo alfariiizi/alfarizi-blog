@@ -3,6 +3,7 @@ import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import rehypeHighlight from "rehype-highlight/lib";
+import rehypeSlug from "rehype-slug";
 
 import CustomImage from "@/app/components/mdx-components/CustomImage";
 
@@ -64,7 +65,7 @@ export async function getPostByName(
     options: {
       parseFrontmatter: true,
       mdxOptions: {
-        rehypePlugins: [rehypeKatex, rehypeHighlight],
+        rehypePlugins: [rehypeKatex, rehypeHighlight, rehypeSlug],
         remarkPlugins: [remarkMath, remarkGfm],
       },
     },
