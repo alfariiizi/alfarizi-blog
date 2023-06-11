@@ -17,7 +17,7 @@ type Filetree = {
 const headerRequest = {
   Accept: "application/vnd.github+json",
   Authorization: `Bearer ${process.env.NEXT_APP_GITHUB_TOKEN}`,
-  "X-GitHub-Api-Version": "2022-11-28",
+  "X-Github-Api-Version": "2022-11-28",
 };
 
 /**
