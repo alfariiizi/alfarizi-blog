@@ -4,6 +4,8 @@ import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import rehypeHighlight from "rehype-highlight/lib";
 
+import CustomImage from "@/app/components/mdx-components/CustomImage";
+
 // it used for filetree inside of getPostsMeta() function
 type Filetree = {
   tree: [
@@ -52,6 +54,11 @@ export async function getPostByName(
     tags: string[];
   }>({
     source: rawMDX,
+
+    // all custom component for mdx file have to be registered in here
+    components: {
+      CustomImage,
+    },
 
     // all options (like plugin) will parse in here
     options: {
