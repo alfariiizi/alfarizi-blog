@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+  padding: 0;
+}
+
 /* Default CSS from Nextjs */
 /* ======================= */
 
